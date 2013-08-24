@@ -1,5 +1,7 @@
 *.class
-
+# eclipse settings #
+.settings/
+out/
 # Package Files #
 *.jar
 *.war
