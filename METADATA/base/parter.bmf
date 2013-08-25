@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createTime="2013-08-25 15:44:20" creator="" description="" displayName="parter" gencodestyle="NC传统样式" help="" id="d9c5c2ce-2bf2-466b-8fbd-ac2659fe0884" mainEntity="2ad43019-0218-4869-951c-2f20256b160b" modifier="" modifyTime="2013-08-25 15:44:26" name="parter" namespace="smp" ownModule="smp" preLoad="false" resModuleName="parter" version="2" versionType="0">
+    <celllist>
+        <entity accessorClassName="nc.md.model.access.javamap.NCBeanStyle" bizItfImpClassName="" componentID="d9c5c2ce-2bf2-466b-8fbd-ac2659fe0884" createTime="2013-08-25 15:44:26" creator="" czlist="" description="" displayName="服务伙伴" fullClassName="nc.vo.smp.parter.ParterVO" height="100" help="" id="2ad43019-0218-4869-951c-2f20256b160b" isAuthen="true" isPrimary="true" keyAttributeId="c9df0210-7bce-4c64-bc31-1f778aa0821c" modInfoClassName="" modifier="" modifyTime="2013-08-25 15:57:12" name="Parter" resid="" stereoType="" tableName="smp_Parter" versionType="0" visibility="public" width="80" x="313" y="79">
+            <attributelist>
+                <attribute accessStrategy="" calculation="false" classID="2ad43019-0218-4869-951c-2f20256b160b" dataType="BS000010000100001051" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="服务伙伴主键" fieldName="pk_parter" fieldType="char" fixedLength="false" help="" id="c9df0210-7bce-4c64-bc31-1f778aa0821c" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="true" isKey="true" isNullable="false" isReadOnly="false" isShare="false" length="20" maxValue="" minValue="" name="pk_parter" precise="" refModelName="" resid="" sequence="0" typeDisplayName="UFID" typeName="UFID" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="2ad43019-0218-4869-951c-2f20256b160b" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="服务伙伴名称" fieldName="parter_name" fieldType="varchar" fixedLength="false" help="" id="ac825630-3618-4a52-98ca-2cbe99c0239d" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="50" maxValue="" minValue="" name="parter_name" precise="" refModelName="" resid="" sequence="1" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="2ad43019-0218-4869-951c-2f20256b160b" dataType="1a2165a8-32ef-4746-9f73-c14a5859b369" dataTypeStyle="REF" dbtype="" defaultValue="" description="" displayName="所属团队主键" fieldName="pk_team" fieldType="" fixedLength="false" help="" id="2d7270a3-00da-4803-b2f8-1ce1ce6ec554" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="pk_team" precise="" refModelName="" resid="" sequence="2" typeDisplayName="团队" typeName="Team" versionType="0" visibility="public"/>
+            </attributelist>
+            <operationlist/>
+            <busiitfs/>
+            <busimaps/>
+            <canzhaolist/>
+            <accessor classFullname="nc.md.model.access.javamap.NCBeanStyle" displayName="NCVO" name="NCVO">
+                <properties/>
+            </accessor>
+        </entity>
+    </celllist>
+    <connectlist/>
+    <refdepends>
+        <dependfile module="smp" path="\base\team.bmf"/>
+    </refdepends>
+    <rulers>
+        <ruler isHorizontal="true" unit="0">
+            <guideList/>
+        </ruler>
+        <ruler isHorizontal="false" unit="0">
+            <guideList/>
+        </ruler>
+    </rulers>
+</component>
