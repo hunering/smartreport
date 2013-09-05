@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='gb2312'?>
+<module code= '' dbtype='ORACLE'>
+<row><objtype>column</objtype><objname>approve_date</objname><operation>modify</operation><dependtable>smp_tuikuan</dependtable><content>alter table smp_tuikuan modify approve_date CHAR(19)</content></row>
+</module>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createTime="2013-09-04 21:14:33" creator="" description="" displayName="tuikuan" gencodestyle="NC传统样式" help="" id="f144b362-d36d-40f0-8037-f9d7018adc24" mainEntity="96ba8328-7575-470e-aa3c-735a99b22ebc" modifier="" modifyTime="2013-09-04 21:14:42" name="tuikuan" namespace="smp" ownModule="smp" preLoad="false" resModuleName="tuikuan" version="3" versionType="0">
+    <celllist>
+        <entity accessorClassName="nc.md.model.access.javamap.NCBeanStyle" bizItfImpClassName="" componentID="f144b362-d36d-40f0-8037-f9d7018adc24" createTime="2013-09-04 21:14:42" creator="" czlist="" description="" displayName="退款明细表" fullClassName="nc.vo.smp.tuikuan.TuiKuanVO" height="100" help="" id="96ba8328-7575-470e-aa3c-735a99b22ebc" isAuthen="true" isPrimary="true" keyAttributeId="e7f7c301-53f5-46c7-b728-80449f41277f" modInfoClassName="" modifier="" modifyTime="2013-09-04 21:57:31" name="TuiKuan" resid="" stereoType="" tableName="smp_TuiKuan" versionType="0" visibility="public" width="80" x="286" y="87">
+            <attributelist>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="BS000010000100001051" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="退款主键" fieldName="pk_tuikuan" fieldType="char" fixedLength="false" help="" id="e7f7c301-53f5-46c7-b728-80449f41277f" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="true" isKey="true" isNullable="false" isReadOnly="false" isShare="false" length="20" maxValue="" minValue="" name="pk_tuikuan" precise="" refModelName="" resid="" sequence="0" typeDisplayName="UFID" typeName="UFID" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="bf0c3a57-638f-48c7-a3ce-f5371c072df0" dataTypeStyle="REF" dbtype="" defaultValue="" description="" displayName="业绩主键" fieldName="pk_refund" fieldType="" fixedLength="false" help="" id="f3e6b83b-33ce-4b7d-bd81-0137f260592e" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="pk_refund" precise="" refModelName="" resid="" sequence="1" typeDisplayName="业绩明细" typeName="Refund" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="BS000010000100001031" dataTypeStyle="SINGLE" dbtype="decimal" defaultValue="" description="" displayName="退款金额" fieldName="amount" fieldType="decimal" fixedLength="false" help="" id="fc190c78-ccce-48cd-a162-50bf070a216f" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="28" maxValue="" minValue="" name="amount" precise="8" refModelName="" resid="" sequence="2" typeDisplayName="UFDouble" typeName="UFDouble" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="退款原因" fieldName="reason" fieldType="varchar" fixedLength="false" help="" id="c9368957-e011-4859-8786-442ea7cb0d7c" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="50" maxValue="" minValue="" name="reason" precise="" refModelName="" resid="" sequence="3" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="审核人" fieldName="approved_by" fieldType="varchar" fixedLength="false" help="" id="5c16943b-bb62-4974-8cab-53dfc3bd9577" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="50" maxValue="" minValue="" name="approved_by" precise="" refModelName="" resid="" sequence="4" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="审核状态" fieldName="approved_status" fieldType="varchar" fixedLength="false" help="" id="ea173152-ed0a-4b34-affb-0f358bd96e56" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="50" maxValue="" minValue="" name="approved_status" precise="" refModelName="" resid="" sequence="5" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="96ba8328-7575-470e-aa3c-735a99b22ebc" dataType="BS000010000100001034" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="审核日期" fieldName="approve_date" fieldType="char" fixedLength="false" help="" id="f54a53d5-a2f4-447c-a921-82412d7ab275" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="19" maxValue="" minValue="" name="approve_date" precise="" refModelName="" resid="" sequence="6" typeDisplayName="UFDateTime" typeName="UFDateTime" versionType="0" visibility="public"/>
+            </attributelist>
+            <operationlist/>
+            <busiitfs/>
+            <busimaps/>
+            <canzhaolist/>
+            <accessor classFullname="nc.md.model.access.javamap.NCBeanStyle" displayName="NCVO" name="NCVO">
+                <properties/>
+            </accessor>
+        </entity>
+    </celllist>
+    <connectlist/>
+    <refdepends>
+        <dependfile module="smp" path="\base\refund.bmf"/>
+    </refdepends>
+    <rulers>
+        <ruler isHorizontal="true" unit="0">
+            <guideList/>
+        </ruler>
+        <ruler isHorizontal="false" unit="0">
+            <guideList/>
+        </ruler>
+    </rulers>
+</component>

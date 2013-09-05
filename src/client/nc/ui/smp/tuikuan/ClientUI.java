@@ -1,12 +1,12 @@
-package nc.ui.smp.refund;
+package nc.ui.smp.tuikuan;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import nc.ui.pub.bill.BillEditEvent;
-import nc.ui.trade.bocommand.IUserDefButtonCommand;
-import nc.ui.trade.manage.ManageEventHandler;
 import nc.vo.pub.CircularlyAccessibleValueObject;
+import nc.ui.trade.manage.ManageEventHandler;
+ 
+  
+import nc.ui.trade.bocommand.IUserDefButtonCommand;
+import java.util.ArrayList;
+import java.util.List;  
 
 
 /**
@@ -47,20 +47,6 @@ import nc.vo.pub.CircularlyAccessibleValueObject;
 	public void setDefaultData() throws Exception {
 	}
 	
-	@Override
-	public void afterEdit(BillEditEvent e) {
-		if("pk_parter".equalsIgnoreCase(e.getKey())){
-			 
-		 String pk_parter=	""+this.getBillCardPanel().getHeadItem("pk_parter").getValue();
-		 if(!pk_parter.equalsIgnoreCase("NULL")){
-			 MyDelegator m=new  MyDelegator();
-			 String pk_team= m.getPKTeamByPKPartern(pk_parter);
-			 this.getBillCardPanel().setHeadItem("pk_team", pk_team);
-			 String pk_director=m.getPKDirectorByPKTeam(pk_team);
-			 this.getBillCardPanel().setHeadItem("pk_director", pk_director);
-		 }
-		 
-		}
-	}
+
 
 }
