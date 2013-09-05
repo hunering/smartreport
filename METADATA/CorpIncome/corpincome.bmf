@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component conRouterType="手动" createTime="2013-08-26 13:41:28" creator="" description="" displayName="corpincome" gencodestyle="NC传统样式" help="" id="c993f832-5be0-4920-b8b5-c485e380412a" mainEntity="42b77099-01ba-4405-8e88-5eac8344e20a" modifier="" modifyTime="2013-08-26 14:00:20" name="corpincome" namespace="smp" ownModule="smp" preLoad="false" resModuleName="corpincome" version="12" versionType="0">
+    <celllist>
+        <entity accessorClassName="nc.md.model.access.javamap.NCBeanStyle" bizItfImpClassName="" componentID="c993f832-5be0-4920-b8b5-c485e380412a" createTime="2013-08-26 13:41:46" creator="" czlist="" description="" displayName="开课明细" fullClassName="nc.vo.smp.corpincome.ClassExecutionVO" height="207" help="" id="42b77099-01ba-4405-8e88-5eac8344e20a" isAuthen="true" isPrimary="true" keyAttributeId="34abb433-4a73-400f-b395-5770f05af969" modInfoClassName="" modifier="" modifyTime="2013-08-26 14:05:30" name="class_execution" resid="" stereoType="" tableName="smp_class_execution" versionType="0" visibility="public" width="80" x="158" y="25">
+            <attributelist>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="BS000010000100001051" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="开课ID" fieldName="pk_classexecution" fieldType="char" fixedLength="false" help="" id="34abb433-4a73-400f-b395-5770f05af969" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="true" isKey="true" isNullable="false" isReadOnly="false" isShare="false" length="20" maxValue="" minValue="" name="pk_classexecution" precise="" refModelName="" resid="" sequence="0" typeDisplayName="UFID" typeName="UFID" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="BS000010000100001034" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="开课日期" fieldName="classexecution_date" fieldType="char" fixedLength="false" help="" id="2fd59b0f-a1f5-41d3-bca3-c9bbcd68c354" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="19" maxValue="" minValue="" name="classexecution_date" precise="" refModelName="" resid="" sequence="1" typeDisplayName="UFDateTime" typeName="UFDateTime" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="6ab654cb-ba87-4136-9c87-2919708bd73a" dataTypeStyle="REF" dbtype="" defaultValue="" description="" displayName="课程ID" fieldName="pk_course" fieldType="" fixedLength="false" help="" id="32aaac55-9833-478f-9ab0-ea6b472cd065" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="pk_course" precise="" refModelName="" resid="" sequence="2" typeDisplayName="课程" typeName="Course" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="BS000010000100001004" dataTypeStyle="SINGLE" dbtype="int" defaultValue="" description="" displayName="开课期数" fieldName="classexecution_sequence" fieldType="int" fixedLength="false" help="" id="b1d6faa2-f916-4b9d-90fb-290b3ef8cfdd" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="classexecution_sequence" precise="" refModelName="" resid="" sequence="3" typeDisplayName="Integer" typeName="Integer" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="BS000010000100001004" dataTypeStyle="SINGLE" dbtype="int" defaultValue="" description="" displayName="人数" fieldName="classexecution_studentnum" fieldType="int" fixedLength="false" help="" id="28144232-2435-4eba-b02a-91d24ae85991" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="classexecution_studentnum" precise="" refModelName="" resid="" sequence="4" typeDisplayName="Integer" typeName="Integer" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="BS000010000100001052" dataTypeStyle="SINGLE" dbtype="decimal" defaultValue="" description="" displayName="金额" fieldName="classexecution_money" fieldType="decimal" fixedLength="false" help="" id="19f2939f-87bc-4527-a85b-5f615b6730f3" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="28" maxValue="" minValue="" name="classexecution_money" precise="4" refModelName="" resid="" sequence="5" typeDisplayName="UFMoney" typeName="UFMoney" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="ba115c2a-a17b-43a8-b06e-092276fe6110" dataTypeStyle="REF" dbtype="" defaultValue="" description="" displayName="区域ID" fieldName="pk_area" fieldType="" fixedLength="false" help="" id="edbef877-47ce-4b04-9ea3-74cf43b6fbef" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="false" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="pk_area" precise="" refModelName="" resid="" sequence="6" typeDisplayName="项目" typeName="Entity" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="42b77099-01ba-4405-8e88-5eac8344e20a" dataType="ba115c2a-a17b-43a8-b06e-092276fe6110" dataTypeStyle="REF" dbtype="" defaultValue="" description="" displayName="项目ID" fieldName="pk_project" fieldType="" fixedLength="false" help="" id="16965133-d07d-49f3-b342-c0c80c72e99c" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="false" isReadOnly="false" isShare="false" length="" maxValue="" minValue="" name="pk_project" precise="" refModelName="" resid="" sequence="7" typeDisplayName="项目" typeName="Entity" versionType="0" visibility="public"/>
+            </attributelist>
+            <operationlist/>
+            <busiitfs/>
+            <busimaps/>
+            <canzhaolist/>
+            <accessor classFullname="nc.md.model.access.javamap.NCBeanStyle" displayName="NCVO" name="NCVO">
+                <properties/>
+            </accessor>
+        </entity>
+        <entity accessorClassName="nc.md.model.access.javamap.NCBeanStyle" bizItfImpClassName="" componentID="c993f832-5be0-4920-b8b5-c485e380412a" createTime="2013-08-26 13:53:00" creator="" czlist="" description="" displayName="区域" fullClassName="nc.vo.smp.corpincome.AreaVO" height="100" help="" id="a29c1f40-0c2d-40f7-8c6c-119a1cb5b338" isAuthen="true" isPrimary="false" keyAttributeId="09d50030-ee28-47db-9afc-1367925c3b05" modInfoClassName="" modifier="" modifyTime="2013-08-26 14:05:30" name="area" resid="" stereoType="" tableName="smp_area" versionType="0" visibility="public" width="80" x="363" y="40">
+            <attributelist>
+                <attribute accessStrategy="" calculation="false" classID="a29c1f40-0c2d-40f7-8c6c-119a1cb5b338" dataType="BS000010000100001051" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="区域ID" fieldName="pk_area" fieldType="char" fixedLength="false" help="" id="09d50030-ee28-47db-9afc-1367925c3b05" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="true" isKey="true" isNullable="false" isReadOnly="false" isShare="false" length="20" maxValue="" minValue="" name="pk_area" precise="" refModelName="" resid="" sequence="0" typeDisplayName="UFID" typeName="UFID" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="a29c1f40-0c2d-40f7-8c6c-119a1cb5b338" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="区域名称" fieldName="area_name" fieldType="varchar" fixedLength="false" help="" id="989d3f2c-f88d-4b3a-8ef7-bb22cb7730ba" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="50" maxValue="" minValue="" name="area_name" precise="" refModelName="" resid="" sequence="1" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+            </attributelist>
+            <operationlist/>
+            <busiitfs/>
+            <busimaps/>
+            <canzhaolist/>
+            <accessor classFullname="nc.md.model.access.javamap.NCBeanStyle" displayName="NCVO" name="NCVO">
+                <properties/>
+            </accessor>
+        </entity>
+        <entity accessorClassName="nc.md.model.access.javamap.POJOStyle" bizItfImpClassName="" componentID="c993f832-5be0-4920-b8b5-c485e380412a" createTime="2013-08-26 14:00:20" creator="" czlist="" description="" displayName="项目" fullClassName="nc.vo.smp.corpincome.Entity" height="100" help="" id="ba115c2a-a17b-43a8-b06e-092276fe6110" isAuthen="true" isPrimary="false" keyAttributeId="08ac3992-b982-4048-b55d-5b17431f6b86" modInfoClassName="" modifier="" modifyTime="2013-08-26 14:05:30" name="Entity" resid="" stereoType="" tableName="smp_Entity" versionType="0" visibility="public" width="80" x="366" y="151">
+            <attributelist>
+                <attribute accessStrategy="" calculation="false" classID="ba115c2a-a17b-43a8-b06e-092276fe6110" dataType="BS000010000100001051" dataTypeStyle="SINGLE" dbtype="char" defaultValue="" description="" displayName="项目ID" fieldName="pk_project" fieldType="char" fixedLength="false" help="" id="08ac3992-b982-4048-b55d-5b17431f6b86" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="true" isKey="true" isNullable="false" isReadOnly="false" isShare="false" length="20" maxValue="" minValue="" name="pk_project" precise="" refModelName="" resid="" sequence="0" typeDisplayName="UFID" typeName="UFID" versionType="0" visibility="public"/>
+                <attribute accessStrategy="" calculation="false" classID="ba115c2a-a17b-43a8-b06e-092276fe6110" dataType="BS000010000100001001" dataTypeStyle="SINGLE" dbtype="varchar" defaultValue="" description="" displayName="项目名称" fieldName="project_name" fieldType="varchar" fixedLength="false" help="" id="8a18717b-967f-40b3-9440-ae08af7d33ff" isActive="true" isAuthorization="true" isDefaultDimensionAttribute="false" isDefaultMeasureAttribute="false" isGlobalization="false" isHide="false" isKey="false" isNullable="true" isReadOnly="false" isShare="false" length="50" maxValue="" minValue="" name="project_name" precise="" refModelName="" resid="" sequence="1" typeDisplayName="String" typeName="String" versionType="0" visibility="public"/>
+            </attributelist>
+            <operationlist/>
+            <busiitfs/>
+            <busimaps/>
+            <canzhaolist/>
+            <accessor classFullname="nc.md.model.access.javamap.POJOStyle" displayName="POJO" name="pojo">
+                <properties/>
+            </accessor>
+        </entity>
+    </celllist>
+    <connectlist>
+        <relation componentID="c993f832-5be0-4920-b8b5-c485e380412a" createTime="2013-08-26 13:56:28" creator="" description="" displayName="" help="" id="fb4b5e35-f35a-4108-8113-57eda857efbc" modifier="" modifyTime="2013-08-26 13:59:07" name="relation" realsource="42b77099-01ba-4405-8e88-5eac8344e20a" realtarget="a29c1f40-0c2d-40f7-8c6c-119a1cb5b338" source="42b77099-01ba-4405-8e88-5eac8344e20a" sourceConstraint="n" srcAttributeid="edbef877-47ce-4b04-9ea3-74cf43b6fbef" target="a29c1f40-0c2d-40f7-8c6c-119a1cb5b338" targetConstraint="1" versionType="0">
+            <points/>
+        </relation>
+        <relation componentID="c993f832-5be0-4920-b8b5-c485e380412a" createTime="2013-08-26 14:02:29" creator="" description="" displayName="" help="" id="1d3a768c-4e67-4448-8a81-51d3d53dea2b" modifier="" modifyTime="2013-08-26 14:03:27" name="relation" realsource="42b77099-01ba-4405-8e88-5eac8344e20a" realtarget="ba115c2a-a17b-43a8-b06e-092276fe6110" source="42b77099-01ba-4405-8e88-5eac8344e20a" sourceConstraint="n" srcAttributeid="16965133-d07d-49f3-b342-c0c80c72e99c" target="ba115c2a-a17b-43a8-b06e-092276fe6110" targetConstraint="1" versionType="0">
+            <points/>
+        </relation>
+    </connectlist>
+    <refdepends>
+        <dependfile module="smp" path="\base\course.bmf"/>
+    </refdepends>
+    <rulers>
+        <ruler isHorizontal="true" unit="0">
+            <guideList/>
+        </ruler>
+        <ruler isHorizontal="false" unit="0">
+            <guideList/>
+        </ruler>
+    </rulers>
+</component>
