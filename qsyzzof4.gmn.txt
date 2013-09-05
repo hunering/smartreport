@@ -1,0 +1,29 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   METADATA/base/tuikuan.bmf
+#	new file:   sqls/smp/base/tuikuan/Dtype/db2.xml
+#	new file:   sqls/smp/base/tuikuan/Dtype/mssql.xml
+#	new file:   sqls/smp/base/tuikuan/Dtype/oracle.xml
+#	new file:   sqls/smp/base/tuikuan/SQLSERVER/00001/base_tuikuan_table.sql
+#	new file:   sqls/smp/base/tuikuan/SQLSERVER/00002/base_tuikuan_constraint.sql
+#	new file:   sqls/smp/base/tuikuan/diff.xml
+#	modified:   src/client/nc/ui/smp/refund/ClientUI.java
+#	modified:   src/client/nc/ui/smp/refund/MyDelegator.java
+#	new file:   src/client/nc/ui/smp/refund/RefundModel.java
+#	new file:   src/client/nc/ui/smp/tuikuan/AbstractClientUI.java
+#	new file:   src/client/nc/ui/smp/tuikuan/AbstractMyDelegator.java
+#	new file:   src/client/nc/ui/smp/tuikuan/ClientUI.java
+#	new file:   src/client/nc/ui/smp/tuikuan/ClientUICheckRule.java
+#	new file:   src/client/nc/ui/smp/tuikuan/ClientUICtrl.java
+#	new file:   src/client/nc/ui/smp/tuikuan/MyDelegator.java
+#	new file:   src/client/nc/ui/smp/tuikuan/MyEventHandler.java
+#	new file:   src/client/nc/ui/smp/tuikuan/command/SaveBoCommand.java
+#	new file:   src/public/nc/ui/smp/tuikuan/ClientUIGetter.java
+#	new file:   src/public/nc/vo/smp/tuikuan/TuiKuanVO.java
+#
+
