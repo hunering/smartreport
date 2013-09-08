@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='gb2312'?>
+<module code= '' dbtype='ORACLE'>
+<row><objtype>table</objtype><objname>smp_danjutest</objname><operation>new</operation><content>create table smp_danjutest ( approvedate CHAR(10),approvenote VARCHAR2(50),approver VARCHAR2(50),approvestatus NUMBER(38,0),billid VARCHAR2(50) not null,billmarker VARCHAR2(50),billno VARCHAR2(50),billtype VARCHAR2(50),busitype VARCHAR2(50),dr NUMBER(10,0) default 0,name VARCHAR2(50),pk_corp VARCHAR2(50),ts CHAR(19) default to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'))</content></row>
+</module>
