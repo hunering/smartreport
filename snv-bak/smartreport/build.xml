@@ -1,0 +1,104 @@
+<project name="smartreport" default="deploy" basedir=".">
+
+	<property name="home.dir" location="." />
+	<property file="${home.dir}/build.properties" />
+
+	<target name="init" />
+
+	<target name="core" depends="init">
+	</target>
+
+	<target name="mk-module-dir">
+		<mkdir dir="${build.dir}/${module.name}" />
+		<mkdir dir="${build.dir}/${module.name}/client" />
+		<mkdir dir="${build.dir}/${module.name}/client/lib" />
+		<mkdir dir="${build.dir}/${module.name}/lib" />
+		<mkdir dir="${build.dir}/${module.name}/META-INF" />
+		<mkdir dir="${build.dir}/${module.name}/META-INF/lib" />
+
+	</target>
+
+	<target name="package-module">
+		<jar destfile="${build.dir}/${module.name}/META-INF/lib/${module.name}.jar">
+			<fileset dir="${out.dir}/private">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		<copy todir="${build.dir}/${module.name}/META-INF/classes/">
+			<fileset dir="${out.dir}/private">
+				<include name="*.xml" />
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}/${module.name}/classes/">
+			<fileset dir="${out.dir}/public">
+				<include name="*.xml" />
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+
+		<jar destfile="${build.dir}/${module.name}/lib/${module.name}_pub.jar">
+			<fileset dir="${out.dir}/public">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<!--jar destfile="${build.dir}/${module.name}/lib/${module.name}_gen.jar">
+			<fileset dir="${out.dir}/gen">
+				<include name="**/*.class" />
+			</fileset>
+		</jar-->
+
+		<jar destfile="${build.dir}/${module.name}/client/lib/${module.name}_ui.jar">
+			<fileset dir="${out.dir}/client">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<copy todir="${build.dir}/${module.name}/META-INF/">
+			<fileset dir="${metainf.dir}">
+			</fileset>
+		</copy>
+	
+		<!--
+		<copy todir="${build.dir}/${module.name}/lib/">
+			<fileset dir="${lib.dir}">
+			</fileset>
+		</copy>
+		-->
+
+	</target>
+
+	<target name="deploy" depends="clean,init,mk-module-dir,package-module">
+
+		<copy todir="${nc.home.dir}/modules/${module.name}">
+			<fileset dir="${build.dir}/${module.name}/">
+
+			</fileset>
+		</copy>
+	<!--	
+		<copy todir="${nc.home.dir}/resources/">
+			<fileset dir="${home.dir}/resources/">
+
+			</fileset>
+		</copy>
+	-->
+		<!--copy todir="${nc.home.dir}/modules/to/META-INF/classes/nc/bs/pub/action">
+			<fileset file="${home.dir}/out/private/nc/bs/pub/action">
+			</fileset>
+		</copy-->
+
+	</target>
+	<target name="undeploy">
+		<echo message="${nc.home.dir}/modules/${module.name}" />
+		<delete dir="${nc.home.dir}/modules/${module.name}" />
+		<delete dir="${build.dir}/${module.name}/" />
+	</target>
+	<target name="redeploy" depends="undeploy,mk-module-dir,deploy">
+
+	</target>
+
+	<target name="clean" depends="init">
+		<delete dir="${build.dir}/${module.name}" />
+	</target>
+</project>
