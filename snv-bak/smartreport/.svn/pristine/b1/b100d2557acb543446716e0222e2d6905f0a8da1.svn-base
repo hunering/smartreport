@@ -35,10 +35,6 @@ public class DetailReportVO extends CircularlyAccessibleValueObject implements C
 	public DetailReportVO(){
 		values = new HashMap();
         fields = new Vector();
-        
-//        fields.add("realitynum");
-//        fields.add("nextbudget");
-//        fields.add("budget");
 	}
 	
 	public String getAchievetype() {
@@ -160,17 +156,5 @@ public class DetailReportVO extends CircularlyAccessibleValueObject implements C
 		// TODO Auto-generated method stub
 		
 	}
-	
-	public Object clone(){
-		DetailReportVO gvo;
-        try{
-            gvo = (DetailReportVO)super.clone();
-        }catch(Exception e){
-            gvo = new DetailReportVO();
-        }
-        gvo.fields = (Vector)fields.clone();
-        gvo.values = (HashMap)values.clone();
-        return gvo;
-    }
 
 }

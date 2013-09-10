@@ -23,7 +23,10 @@ public class SMPUtil {
 		Calendar cal = new GregorianCalendar();
 		cal.setTime(date);
 		cal.set(Calendar.DATE, 1);
-		
+		int weekOfFirstDay = cal.get(Calendar.DAY_OF_WEEK);
+		if (weekOfFirstDay > 5) {
+			
+		}
 		Calendar cal2 = (GregorianCalendar) cal.clone(); 
 		int weekOfMonth = cal2.getActualMaximum(Calendar.WEEK_OF_MONTH);	//一月里的周数
 //		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);		//每周的天数

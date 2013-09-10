@@ -40,7 +40,7 @@ public class DetailReportUI extends ReportUIBase{
 		
 		reBuildButtons();
 		getConditionPanel().setVisible(false);	//去掉表头查询条件
-		this.getReportBase().showZeroLikeNull(false);
+		this.getReportBase().showZeroLikeNull(true);
 		this.getReportBase().setTatolRowShow(false);
 		
 		//组装报表列

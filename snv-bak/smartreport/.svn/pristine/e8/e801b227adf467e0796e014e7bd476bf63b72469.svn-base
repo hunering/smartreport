@@ -9,6 +9,7 @@ import javax.naming.NamingException;
 
 import nc.bs.dao.BaseDAO;
 import nc.bs.smp.SMPBaseDAO;
+import nc.bs.trade.business.HYPubBO;
 import nc.itf.smp.ISMPConstant;
 import nc.itf.smp.ISMPReport;
 import nc.jdbc.framework.SQLParameter;
@@ -91,43 +92,40 @@ public class ISMPReportImpl implements ISMPReport{
 	private DetailReportVO transResultSet(String achievetype, List<Map> list){
 		DetailReportVO vo = new DetailReportVO();
 		vo.setAchievetype(achievetype);		//业绩类型
-		UFDouble total = UFDouble.ZERO_DBL; 
 		if(list!=null && list.size()>0){
+			UFDouble total = new UFDouble(); 
 			for(int i=0;i<list.size();i++){
 				Map map = list.get(i);
 				UFDouble remit_amount = map.get("remit_amount")!=null ? new UFDouble(map.get("remit_amount").toString()) : UFDouble.ZERO_DBL;
 				total = total.add(remit_amount);
 				vo.setAttributeValue((String)map.get("course_code"), remit_amount);
 			}
+			vo.setRealitynum(total);	//本月实际额
 		}
-		vo.setRealitynum(total);	//本月实际额
 		return vo;
 	}
 	
 	/**
 	 * 生成小计行
 	 * @param rowHeading
-	 * @param vo0	自由业绩
-	 * @param vo1	代理商业绩
+	 * @param list0
+	 * @param list1
 	 * @return
 	 */
 	private DetailReportVO getSubtotalRow(String rowHeading,DetailReportVO vo0,DetailReportVO vo1){
 		
 		DetailReportVO totalvo = (DetailReportVO) vo0.clone();
-		String[] fields = totalvo.getAttributeNames();
-		
-		UFDouble realTotal = UFDouble.ZERO_DBL; 	//本月实际
+		String[] fields = vo1.getAttributeNames();
 		for(int i=0;i<fields.length;i++){
-			if(!fields[i].equals("achievetype") && !fields[i].startsWith("vfree")){
+			if(!fields[i].equals("achievetype")){
 				Object obj_t = totalvo.getAttributeValue(fields[i]);
 				Object obj_1 = vo1.getAttributeValue(fields[i]);
 				UFDouble totalValue = (obj_t!=null ? new UFDouble(obj_t.toString()) : UFDouble.ZERO_DBL).add(obj_1 != null ? new UFDouble(obj_1.toString()): UFDouble.ZERO_DBL);
 				totalvo.setAttributeValue(fields[i], totalValue);
-				realTotal = realTotal.add(totalValue);
 			}
 		}
-		totalvo.setRealitynum(realTotal);	//本月实际额
 		totalvo.setAchievetype(rowHeading);	//设置行头名称
+//		totalvo.setAttributeValue("achievetype", rowHeading);
 		return totalvo;
 	}
 	
@@ -140,53 +138,35 @@ public class ISMPReportImpl implements ISMPReport{
 		
 		
 		List<DetailReportVO> rtList = new ArrayList<DetailReportVO>();
-		
-		DetailReportVO totalvo0 = new DetailReportVO();	//自由业绩合计
-		totalvo0.setAchievetype(ISMPConstant.SMP_ACHIEVETYPE_NAME_SUTOTAL_ZY);
-		
-		DetailReportVO totalvo1 = new DetailReportVO();	//代理业绩合计
-		totalvo1.setAchievetype(ISMPConstant.SMP_ACHIEVETYPE_NAME_SUBTOTAL_DLS);
-		
-		DetailReportVO totalvo = new DetailReportVO();	//本月合计
-		totalvo.setAchievetype(ISMPConstant.SMP_ACHIEVETYPE_NAME_TOTAL);
-		
 		if(list!=null && list.size()>0){
+			DetailReportVO totalvo0 = new DetailReportVO();	//自由业绩合计
+			totalvo0.setAchievetype(ISMPConstant.SMP_ACHIEVETYPE_NAME_SUTOTAL_ZY);
 			
-			UFDouble realitynum_0 = UFDouble.ZERO_DBL;		//本月自由业绩本月实际统计
-			UFDouble realitynum_1 = UFDouble.ZERO_DBL;		//本月代理商业绩本月实际统计
-			UFDouble realitynum_t = UFDouble.ZERO_DBL;		//本月合计
+			DetailReportVO totalvo1 = new DetailReportVO();	//代理业绩合计
+			totalvo1.setAchievetype(ISMPConstant.SMP_ACHIEVETYPE_NAME_SUBTOTAL_DLS);
 			
-			String[] fields = list.get(0).getAttributeNames();
+			DetailReportVO totalvo = new DetailReportVO();	//本月合计
+			totalvo.setAchievetype(ISMPConstant.SMP_ACHIEVETYPE_NAME_TOTAL);
+			
+			String[] fields = totalvo0.getAttributeNames();
 			for(DetailReportVO vo:list){
 				for(int i=0;i<fields.length;i++){
 					if(!fields[i].equals("achievetype")){
 						if(vo.getAchievetype().equals(ISMPConstant.SMP_ACHIEVETYPE_NAME_ZY)){	//自由业绩合计
-							Object obj1 = totalvo0.getAttributeValue(fields[i]);
-							Object obj2 = vo.getAttributeValue(fields[i]);
-							UFDouble totalValue = (obj1!=null?new UFDouble(obj1.toString()):UFDouble.ZERO_DBL).add(obj2!=null?new UFDouble(obj2.toString()):UFDouble.ZERO_DBL);
+							UFDouble totalValue = ((UFDouble) totalvo0.getAttributeValue(fields[i])).add((UFDouble)vo.getAttributeValue(fields[i]));
 							totalvo0.setAttributeValue(fields[i], totalValue);
-							realitynum_0 = realitynum_0.add(totalValue);
 							
 						}else if(vo.getAchievetype().equals(ISMPConstant.SMP_ACHIEVETYPE_NAME_DLS)){	//代理商业绩
-							Object obj1 = totalvo1.getAttributeValue(fields[i]);
-							Object obj2 = vo.getAttributeValue(fields[i]);
-							UFDouble totalValue = (obj1!=null?new UFDouble(obj1.toString()):UFDouble.ZERO_DBL).add(obj2!=null?new UFDouble(obj2.toString()):UFDouble.ZERO_DBL);
+							UFDouble totalValue = ((UFDouble) totalvo1.getAttributeValue(fields[i])).add((UFDouble)vo.getAttributeValue(fields[i]));
 							totalvo1.setAttributeValue(fields[i], totalValue);
-							realitynum_1 = realitynum_1.add(totalValue);
 							
 						}else{		//本月合计
-							Object obj1 = totalvo.getAttributeValue(fields[i]);
-							Object obj2 = vo.getAttributeValue(fields[i]);
-							UFDouble totalValue = (obj1!=null?new UFDouble(obj1.toString()):UFDouble.ZERO_DBL).add(obj2!=null?new UFDouble(obj2.toString()):UFDouble.ZERO_DBL);
+							UFDouble totalValue = ((UFDouble) totalvo.getAttributeValue(fields[i])).add((UFDouble)vo.getAttributeValue(fields[i]));
 							totalvo.setAttributeValue(fields[i], totalValue);
-							realitynum_t = realitynum_t.add(totalValue);
 						}
 					}
 				}
 			}
-			totalvo0.setRealitynum(realitynum_0);
-			totalvo1.setRealitynum(realitynum_1);
-			totalvo.setRealitynum(realitynum_t);
 			rtList.add(totalvo0);
 			rtList.add(totalvo1);
 			rtList.add(totalvo);
@@ -207,7 +187,7 @@ public class ISMPReportImpl implements ISMPReport{
 		   .append(") ")
 		   .append("where nvl(a.dr,0)=0 ")
 		   .append("group by a.achievetype,b.pk_course,b.course_code,b.course_name ")
-		   .append("order by b.course_code ")
+		   .append("order by a.achievetype,b.pk_course ")
 		   .append(" ");
 		return str.toString();
 	}

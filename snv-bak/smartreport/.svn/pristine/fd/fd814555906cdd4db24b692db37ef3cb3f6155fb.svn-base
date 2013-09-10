@@ -9,6 +9,7 @@ import javax.naming.NamingException;
 
 import nc.bs.dao.BaseDAO;
 import nc.bs.smp.SMPBaseDAO;
+import nc.bs.trade.business.HYPubBO;
 import nc.itf.smp.ISMPConstant;
 import nc.itf.smp.ISMPReport;
 import nc.jdbc.framework.SQLParameter;
@@ -38,6 +39,7 @@ public class ISMPReportImpl implements ISMPReport{
 		String month = queryVO.getMonth();
 		UFDate date = new UFDate(month+"-"+"01");
 		int weeks = SMPUtil.getWeeksOfMonth(date.toDate());
+		weeks = 1;
 		
 		SMPBaseDAO dao = null;
 		try {
@@ -53,6 +55,9 @@ public class ISMPReportImpl implements ISMPReport{
 			Date date2 = SMPUtil.getLastDayOfWeek(date.toDate(), i);
 			UFDate dateFrom = new UFDate(date1);
 			UFDate dateEnd = new UFDate(date2);
+			dateFrom = new UFDate("2013-08-10");
+			dateEnd = new UFDate("2013-08-16");
+			
 			
 			param.clearParams();
 			param.addParam(dateFrom.toString());
@@ -62,20 +67,20 @@ public class ISMPReportImpl implements ISMPReport{
 			DetailReportVO vo0 = this.transResultSet(ISMPConstant.SMP_ACHIEVETYPE_NAME_ZY, list0);		//数据转换
 			rtList.add(vo0);
 			
-			param.clearParams();
-			param.addParam(dateFrom.toString());
-			param.addParam(dateEnd.toString());
-			param.addParam(ISMPConstant.SMP_ACHIEVETYPE_ID_DLS);			//代理商业绩
-			List list1 = (List) dao.executeQuery(SQL, param, new MapListProcessor());
-			DetailReportVO vo1 = this.transResultSet(ISMPConstant.SMP_ACHIEVETYPE_NAME_DLS, list1);		//数据转换
-			rtList.add(vo1);
+//			param.clearParams();
+//			param.addParam(dateFrom.toString());
+//			param.addParam(dateEnd.toString());
+//			param.addParam(ISMPConstant.SMP_ACHIEVETYPE_ID_DLS);			//代理商业绩
+//			List list1 = (List) dao.executeQuery(SQL, param, new MapListProcessor());
+//			DetailReportVO vo1 = this.transResultSet(ISMPConstant.SMP_ACHIEVETYPE_NAME_DLS, list1);		//数据转换
+//			rtList.add(vo1);
 			
-			DetailReportVO totalvo = this.getSubtotalRow("第"+i+"周业绩合计("+dateFrom.getDay()+"-"+dateEnd.getDay()+"日)", vo0, vo1);	//生成小计
-			rtList.add(totalvo);
+//			DetailReportVO totalvo = this.getSubtotalRow("第"+i+"周业绩合计("+dateFrom.getDay()+"-"+dateEnd.getDay()+"日)", vo0, vo1);	//生成小计
+//			rtList.add(totalvo);
 			
 		}
-		List totalList =  this.getTotalRow(rtList);		//生成合计
-		rtList.addAll(totalList);
+//		List totalList =  this.getTotalRow(rtList);		//生成合计
+//		rtList.addAll(totalList);
 		if(!rtList.isEmpty()){
 			return rtList.toArray(new DetailReportVO[0]);
 		}
