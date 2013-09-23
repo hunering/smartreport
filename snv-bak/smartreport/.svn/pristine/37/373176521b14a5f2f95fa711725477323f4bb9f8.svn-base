@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding='UTF-8'?>
-<module>
-	<public>
-		<component priority="0" singleton="true" remote="true" supportAlias="true" tx="CMT">
-			<interface>nc.itf.smp.ISMPReport</interface>
-			<implementation>nc.impl.smp.ISMPReportImpl</implementation>
-		</component>
-	</public>
-</module>

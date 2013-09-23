@@ -1,8 +1,0 @@
-
-nc.home.dir=d:/code/smp/smp_2013-09-09
-out.dir=${home.dir}/out
-src.dir=${home.dir}/src
-lib.dir=${home.dir}/lib
-build.dir=${home.dir}/build
-module.name=smp
-metainf.dir=${home.dir}/META-INF

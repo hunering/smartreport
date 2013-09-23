@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='gb2312'?>
-<module code= '' dbtype='ORACLE'>
-<row><objtype>table</objtype><objname>smp_course</objname><operation>new</operation><content>create table smp_course ( agency_percentage NUMBER(28,8),branch_percentage NUMBER(28,8),course_code VARCHAR2(50),course_name VARCHAR2(50),dr NUMBER(10,0) default 0,headerquarter_percentage NUMBER(28,8),jixiao_percentage NUMBER(28,8),pk_course CHAR(20) not null,pk_coursetype CHAR(20),remark VARCHAR2(1024),reserved1 VARCHAR2(50),reserved2 VARCHAR2(50),reserved3 VARCHAR2(50),reserved4 VARCHAR2(50),reserved5 VARCHAR2(50),shidao_percentage NUMBER(28,8),ts CHAR(19) default to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'))</content></row>
-</module>

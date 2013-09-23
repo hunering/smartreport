@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='gb2312'?>
-<module code= '' dbtype='ORACLE'>
-<row><objtype>table</objtype><objname>smp_parter</objname><operation>new</operation><content>create table smp_parter ( dr NUMBER(10,0) default 0,parter_name VARCHAR2(50),pk_parter CHAR(20) not null,pk_team CHAR(20),ts CHAR(19) default to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'))</content></row>
-</module>

@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='gb2312'?>
-<module code= '' dbtype='ORACLE'>
-<row><objtype>table</objtype><objname>smp_coursetype</objname><operation>new</operation><content>create table smp_coursetype ( coursetype_name VARCHAR2(50),dr NUMBER(10,0) default 0,pk_coursetype CHAR(20) not null,ts CHAR(19) default to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'))</content></row>
-</module>
